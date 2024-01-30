@@ -3,14 +3,14 @@ use if_chain::if_chain;
 use once_cell::sync::Lazy;
 use std::thread;
 use std::time::Duration;
-use systemstat::{saturating_sub_bytes, Platform, System};
-use raw_cpuid::CpuId;
+use sysinfo::{Components, Disks, Networks, System};
 
 fn main() {
-    let cpuid = CpuId::new();
-    if let Some(sif) = cpuid.get_processor_serial() {
-        println!("Serial number: {:?}", sif.serial_all());
-    } else {
-        println!("No serial number information available");
-    }
+    let mut sys = System::new_all();
+
+    // First we update all information of our `System` struct.
+    sys.refresh_all();
+
+    println!("used swap   : {} bytes", sys.global_cpu_info().name());
+
 }
