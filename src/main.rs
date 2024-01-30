@@ -39,7 +39,15 @@ pub fn init_linux_disk_info() -> anyhow::Result<()> {
         .arg("NAME,SERIAL")
         .output()?;
     let output = String::from_utf8(cmd.stdout)?;
-    let ans = output.split('\n').map(|v|v.to_string()).collect::<Vec<_>>();
+    let ans = output
+        .split('\n')
+        .map(|v| v.to_string())
+        .collect::<Vec<_>>();
+    let ans = ans
+        .into_iter()
+        .map(|v| v.split(' ').map(|v| v.to_string()).collect::<Vec<String>>())
+        .filter(|v| v.len() >= 2)
+        .collect::<Vec<Vec<String>>>();
 
     println!("sn: {:?}", ans);
     Ok(())
