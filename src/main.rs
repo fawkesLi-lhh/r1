@@ -1,27 +1,34 @@
 use dashmap::DashMap;
 use if_chain::if_chain;
 use once_cell::sync::Lazy;
-use systemstat::{saturating_sub_bytes, Platform, System};
-use std::time::Duration;
 use std::thread;
+use std::time::Duration;
+use systemstat::{saturating_sub_bytes, Platform, System};
+use raw_cpuid::CpuId;
 
 fn main() {
-    let sys = System::new();
-    match sys.cpu_load_aggregate() {
-        Ok(cpu)=> {
-            println!("\nMeasuring CPU load...");
-            thread::sleep(Duration::from_secs(1));
-            let cpu = cpu.done().unwrap();
-            println!("CPU load: {}% user, {}% nice, {}% system, {}% intr, {}% idle ",
-                cpu.user * 100.0, cpu.nice * 100.0, cpu.system * 100.0, cpu.interrupt * 100.0, cpu.idle * 100.0);
-        },
-        Err(x) => println!("\nCPU load: error: {}", x)
+    let cpuid = CpuId::new();
+
+    if let Some(vf) = cpuid.get_vendor_info() {
+        assert!(vf.as_str() == "GenuineIntel" || vf.as_str() == "AuthenticAMD");
     }
 
-    match sys.cpu_temp() {
-        Ok(cpu_temp) => println!("\nCPU temp: {}", cpu_temp),
-        Err(x) => println!("\nCPU temp: {}", x)
+    let has_sse = cpuid
+        .get_feature_info()
+        .map_or(false, |finfo| finfo.has_sse());
+    if has_sse {
+        println!("CPU supports SSE!");
     }
 
-
+    if let Some(cparams) = cpuid.get_cache_parameters() {
+        for cache in cparams {
+            let size = cache.associativity()
+                * cache.physical_line_partitions()
+                * cache.coherency_line_size()
+                * cache.sets();
+            println!("L{}-Cache size is {}", cache.level(), size);
+        }
+    } else {
+        println!("No cache parameter information available")
+    }
 }
