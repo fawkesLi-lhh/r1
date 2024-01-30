@@ -2,7 +2,6 @@ use dashmap::DashMap;
 use if_chain::if_chain;
 use once_cell::sync::Lazy;
 use systemstat::{saturating_sub_bytes, Platform, System};
-use systemstat::{Platform, System};
 
 pub static SysInfo: Lazy<DashMap<SysInfoType, String>> = Lazy::new(|| Default::default());
 #[derive(Ord, PartialOrd, Eq, PartialEq, Clone, Debug, Hash)]
