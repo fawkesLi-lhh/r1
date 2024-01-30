@@ -58,9 +58,10 @@ pub fn init_linux_disk_info() -> anyhow::Result<()> {
         .and_then(|v| v.get(1))
         .cloned()
         .unwrap_or("NA".to_string());
+    println!("sn: {:?}", ans);
     SysInfo.insert(SysInfoType::HD, ans);
 
-    println!("sn: {:?}", ans);
+
     Ok(())
 }
 
