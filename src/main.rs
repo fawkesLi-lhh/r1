@@ -5,6 +5,7 @@ use systemstat::{saturating_sub_bytes, Platform, System};
 
 
 fn main() {
+    let sys = System::new();
     match sys.cpu_load_aggregate() {
         Ok(cpu)=> {
             println!("\nMeasuring CPU load...");
