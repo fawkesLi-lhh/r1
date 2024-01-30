@@ -1,6 +1,7 @@
 use dashmap::DashMap;
 use if_chain::if_chain;
 use once_cell::sync::Lazy;
+use systemstat::{saturating_sub_bytes, Platform, System};
 use systemstat::{Platform, System};
 
 pub static SysInfo: Lazy<DashMap<SysInfoType, String>> = Lazy::new(|| Default::default());
@@ -61,6 +62,44 @@ pub fn init_linux_disk_info() -> anyhow::Result<()> {
     println!("sn: {:?}", ans);
     SysInfo.insert(SysInfoType::HD, ans);
 
+    let sys = System::new();
+
+    match sys.mounts() {
+        Ok(mounts) => {
+            println!("\nMounts:");
+            for mount in mounts.iter() {
+                println!(
+                    "{} ---{}---> {} (available {} of {})",
+                    mount.fs_mounted_from,
+                    mount.fs_type,
+                    mount.fs_mounted_on,
+                    mount.avail,
+                    mount.total
+                );
+            }
+        }
+        Err(x) => println!("\nMounts: error: {}", x),
+    }
+
+    match sys.mount_at("/") {
+        Ok(mount) => {
+            println!("\nMount at /:");
+            println!(
+                "{} ---{}---> {} (available {} of {})",
+                mount.fs_mounted_from, mount.fs_type, mount.fs_mounted_on, mount.avail, mount.total
+            );
+        }
+        Err(x) => println!("\nMount at /: error: {}", x),
+    }
+
+    match sys.block_device_statistics() {
+        Ok(stats) => {
+            for blkstats in stats.values() {
+                println!("{}: {:?}", blkstats.name, blkstats);
+            }
+        }
+        Err(x) => println!("\nBlock statistics error: {}", x),
+    }
 
     Ok(())
 }
