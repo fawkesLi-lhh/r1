@@ -45,7 +45,7 @@ pub fn init_linux_disk_info() -> anyhow::Result<()> {
         .collect::<Vec<_>>();
     let ans = ans
         .into_iter()
-        .map(|v| v.split(' ').map(|v| v.to_string()).collect::<Vec<String>>())
+        .map(|v| v.split(' ').map(|v| v.to_string()).filter(|v|v.len()>0).collect::<Vec<String>>())
         .filter(|v| v.len() >= 2)
         .collect::<Vec<Vec<String>>>();
 
