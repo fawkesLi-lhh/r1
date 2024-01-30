@@ -43,11 +43,22 @@ pub fn init_linux_disk_info() -> anyhow::Result<()> {
         .split('\n')
         .map(|v| v.to_string())
         .collect::<Vec<_>>();
-    let ans = ans
+    let mut ans = ans
         .into_iter()
-        .map(|v| v.split(' ').map(|v| v.to_string()).filter(|v|v.len()>0).collect::<Vec<String>>())
+        .map(|v| {
+            v.split(' ')
+                .map(|v| v.to_string())
+                .filter(|v| v.len() > 0)
+                .collect::<Vec<String>>()
+        })
         .filter(|v| v.len() >= 2)
         .collect::<Vec<Vec<String>>>();
+    let ans = ans
+        .get(0)
+        .and_then(|v| v.get(1))
+        .cloned()
+        .unwrap_or("NA".to_string());
+    SysInfo.insert(SysInfoType::HD, ans);
 
     println!("sn: {:?}", ans);
     Ok(())
