@@ -54,7 +54,7 @@ pub fn init_linux_disk_info() -> anyhow::Result<()> {
         .filter(|v| v.len() >= 2)
         .collect::<Vec<Vec<String>>>();
     let ans = ans
-        .get(0)
+        .get(1)
         .and_then(|v| v.get(1))
         .cloned()
         .unwrap_or("NA".to_string());
