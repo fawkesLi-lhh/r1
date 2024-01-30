@@ -3,125 +3,23 @@ use if_chain::if_chain;
 use once_cell::sync::Lazy;
 use systemstat::{saturating_sub_bytes, Platform, System};
 
-pub static SysInfo: Lazy<DashMap<SysInfoType, String>> = Lazy::new(|| Default::default());
-#[derive(Ord, PartialOrd, Eq, PartialEq, Clone, Debug, Hash)]
-pub enum SysInfoType {
-    // 操作系统
-    Windows,
-    // 内网IP（LIP）
-    LIP,
-    // 硬盘序列号
-    HD,
-    // PC终端设备名
-    PCN,
-    //CPU序列号：！！！！！！！
-    CPU,
-    // 硬盘分区信息：（例如: C^NTFS^100G)
-    PI,
-    // 系统盘卷标号：（选填）
-    VOL,
-    //公网
-    IIP,
-    IPORT,
-}
-
-pub fn init_ip_info() -> anyhow::Result<()> {
-    let my_local_ip = local_ip_address::local_ip()?;
-    SysInfo.insert(SysInfoType::LIP, my_local_ip.to_string());
-    Ok(())
-}
-
-pub fn init_linux_disk_info() -> anyhow::Result<()> {
-    use std::process::Command;
-    let cmd = Command::new("lsblk")
-        .arg("--nodeps")
-        .arg("-o")
-        .arg("NAME,SERIAL")
-        .output()?;
-    let output = String::from_utf8(cmd.stdout)?;
-    let ans = output
-        .split('\n')
-        .map(|v| v.to_string())
-        .collect::<Vec<_>>();
-    let mut ans = ans
-        .into_iter()
-        .map(|v| {
-            v.split(' ')
-                .map(|v| v.to_string())
-                .filter(|v| v.len() > 0)
-                .collect::<Vec<String>>()
-        })
-        .filter(|v| v.len() >= 2)
-        .collect::<Vec<Vec<String>>>();
-    let ans = ans
-        .get(1)
-        .and_then(|v| v.get(1))
-        .cloned()
-        .unwrap_or("NA".to_string());
-    println!("sn: {:?}", ans);
-    SysInfo.insert(SysInfoType::HD, ans);
-
-    let sys = System::new();
-
-    match sys.mounts() {
-        Ok(mounts) => {
-            println!("\nMounts:");
-            for mount in mounts.iter() {
-                println!(
-                    "{} ---{}---> {} (available {} of {})",
-                    mount.fs_mounted_from,
-                    mount.fs_type,
-                    mount.fs_mounted_on,
-                    mount.avail,
-                    mount.total
-                );
-            }
-        }
-        Err(x) => println!("\nMounts: error: {}", x),
-    }
-
-    match sys.mount_at("/") {
-        Ok(mount) => {
-            println!("\nMount at /:");
-            println!(
-                "{} ---{}---> {} (available {} of {})",
-                mount.fs_mounted_from, mount.fs_type, mount.fs_mounted_on, mount.avail, mount.total
-            );
-        }
-        Err(x) => println!("\nMount at /: error: {}", x),
-    }
-
-    match sys.block_device_statistics() {
-        Ok(stats) => {
-            for blkstats in stats.values() {
-                println!("{}: {:?}", blkstats.name, blkstats);
-            }
-        }
-        Err(x) => println!("\nBlock statistics error: {}", x),
-    }
-
-    Ok(())
-}
-
-pub fn init_sysinfo() -> anyhow::Result<()> {
-    init_ip_info()?;
-    #[cfg(target_os = "windows")]
-    {
-        SysInfo.insert(SysInfoType::Windows, "PC".to_string());
-    }
-    #[cfg(target_os = "linux")]
-    {
-        init_linux_disk_info()?;
-        SysInfo.insert(SysInfoType::Windows, "LINUX_PC".to_string());
-    }
-    #[cfg(target_os = "macos")]
-    {
-        SysInfo.insert(SysInfoType::Windows, "MAC_PC".to_string());
-    }
-    Ok(())
-}
 
 fn main() {
-    init_sysinfo().unwrap();
-    println!("{:?}", SysInfo);
+    match sys.cpu_load_aggregate() {
+        Ok(cpu)=> {
+            println!("\nMeasuring CPU load...");
+            thread::sleep(Duration::from_secs(1));
+            let cpu = cpu.done().unwrap();
+            println!("CPU load: {}% user, {}% nice, {}% system, {}% intr, {}% idle ",
+                cpu.user * 100.0, cpu.nice * 100.0, cpu.system * 100.0, cpu.interrupt * 100.0, cpu.idle * 100.0);
+        },
+        Err(x) => println!("\nCPU load: error: {}", x)
+    }
+
+    match sys.cpu_temp() {
+        Ok(cpu_temp) => println!("\nCPU temp: {}", cpu_temp),
+        Err(x) => println!("\nCPU temp: {}", x)
+    }
+
+
 }
