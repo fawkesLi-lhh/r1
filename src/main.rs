@@ -12,7 +12,7 @@ fn generator() -> impl Iterator<Item = i32> {
 #[tokio::main]
 async fn main() {
     for num in generator().take(5) {
-        println!("{}", num);
+            println!("{}", num);
     }
     let app = Router::new().route("/", get(handler));
 
