@@ -1,18 +1,28 @@
-use dashmap::DashMap;
-use if_chain::if_chain;
-use once_cell::sync::Lazy;
-use std::thread;
-use std::time::Duration;
-pub fn init_ip_info()->anyhow::Result<()>{
-    let my_local_ip = local_ip_address::local_ip()?;
-    println!("{:?}",my_local_ip);
-    Ok(())
+use axum::{routing::get, Router};
+use std::net::SocketAddr;
+#![feature(coroutines)]
+fn generator() -> impl Iterator<Item = i32> {
+    let mut i = 0;
+    loop {
+        i += 1;
+        yield i;
+    }
 }
 
-fn main() {
-    if let Err(e) = init_ip_info() {
-        println!("Error: {}", e);
+#[tokio::main]
+async fn main() {
+    for num in generator().take(5) {
+        println!("{}", num);
     }
+    let app = Router::new().route("/", get(handler));
 
-    
+    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+    axum::Server::bind(&addr)
+        .serve(app.into_make_service())
+        .await
+        .unwrap();
+}
+
+async fn handler() -> String {
+    "body".to_string()
 }
