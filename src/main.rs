@@ -20,7 +20,7 @@ async fn main() {
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await
-        .unwrap();
+            .unwrap();
 }
 
 async fn handler() -> String {
