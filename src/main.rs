@@ -1,28 +1,27 @@
-use axum::{routing::get, Router};
-use std::net::SocketAddr;
-#![feature(coroutines)]
-fn generator() -> impl Iterator<Item = i32> {
-    let mut i = 0;
-    loop {
-        i += 1;
-        yield i;
+trait T {
+    const TT: i32;
+}
+struct A {}
+impl T for A {
+    const TT: i32 = 1;
+}
+struct B {}
+impl T for B {
+    const TT: i32 = 2;
+}
+enum C {
+    A(A),
+    B(B),
+}
+
+fn tt(c: C) -> Box<dyn T> {
+    match c {
+        C::A(a) => Box::new(a),
+        C::B(b) => Box::new(b),
     }
 }
 
-#[tokio::main]
-async fn main() {
-    for num in generator().take(5) {
-                println!("{}", num);
-    }
-    let app = Router::new().route("/", get(handler));
-
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    axum::Server::bind(&addr)
-        .serve(app.into_make_service())
-        .await
-            .unwrap();
-}
-
-async fn handler() -> String {
-    "body".to_string()
+fn main() {
+    let c = C::A(A {});
+    let t = tt(c);
 }
