@@ -1,0 +1,95 @@
+{
+    "dashboardId": 26,
+    "access": [
+        {
+            "id": "a56169d",
+            "accessName": "%E6%95%B0%E6%8D%AE%E6%BA%90",
+            "selectedContent": [
+                "ftdb_new",
+                "ftdb_test"
+            ]
+        },
+        {
+            "id": "58d32c9d",
+            "accessName": "%E6%97%A5%E6%9C%9F%E8%8C%83%E5%9B%B4",
+            "selectedContent": "2023-11-01~2023-11-27"
+        },
+        {
+            "id": "701eed4f",
+            "accessName": "%E7%AE%97%E6%B3%95",
+            "selectedContent": []
+        },
+        {
+            "id": "898ead6e",
+            "accessName": "%E7%94%A8%E6%88%B7",
+            "selectedContent": [
+                "念空投资"
+            ]
+        },
+        {
+            "id": "e743985b",
+            "accessName": "%E4%BA%A4%E6%98%93%E8%B4%A6%E6%88%B7",
+            "selectedContent": [
+                "光大念空灵活对冲50a",
+                "光大念空灵活对冲50b",
+                "山西念空安瑞成都"
+            ]
+        },
+        {
+            "id": "7fb210bb",
+            "accessName": "%E6%AF%8D%E5%8D%95%E6%97%B6%E9%95%BF(%E7%A7%92)",
+            "selectedContent": [
+                0,
+                100000000
+            ]
+        },
+        {
+            "id": "ddd6bc7f",
+            "accessName": "%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC",
+            "selectedContent": [
+                0,
+                10000
+            ]
+        },
+        {
+            "id": "74f89fad",
+            "accessName": "%E6%92%A4%E5%8D%95%E7%8E%87",
+            "selectedContent": [
+                0,
+                1
+            ]
+        },
+        {
+            "id": "3eba952f",
+            "accessName": "%E8%BF%BD%E5%8D%95%E6%AF%94%E4%BE%8B",
+            "selectedContent": [
+                0,
+                1
+            ]
+        },
+        {
+            "id": "56635638",
+            "accessName": "alpha_%E7%9B%88%E4%BA%8F",
+            "selectedContent": [
+                -100000000,
+                100000000
+            ]
+        },
+        {
+            "id": "8cdb1dc8",
+            "accessName": "%E4%B8%AD%E5%80%BC%E5%BB%B6%E8%BF%9F(ms)",
+            "selectedContent": [
+                0,
+                10000000000000
+            ]
+        },
+        {
+            "id": "34ae75dc",
+            "accessName": "%E6%B6%A8%E8%B7%8C%E5%81%9C%E7%9B%88%E4%BA%8F",
+            "selectedContent": [
+                -100000000,
+                100000000
+            ]
+        }
+    ]
+}
