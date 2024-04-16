@@ -1,27 +1,39 @@
-trait T {
-    const TT: i32;
-}
-struct A {}
-impl T for A {
-    const TT: i32 = 1;
-}
-struct B {}
-impl T for B {
-    const TT: i32 = 2;
-}
-enum C {
-    A(A),
-    B(B),
+pub mod st;
+
+fn fa(asdasd: i32, b: B) -> i32 {
+    let one = st::sta::A::aa();
+    let two = b.bb();
+    st::sta::cc();
+    dd();
+    asdasd + one + two
 }
 
-fn tt(c: C) -> Box<dyn T> {
-    match c {
-        C::A(a) => Box::new(a),
-        C::B(b) => Box::new(b),
+struct B {}
+impl B {
+    fn bb(&self) -> i32 {
+        let r = || {
+            let a = 1;
+            a
+        };
+        r()
+    }
+}
+pub struct A {}
+impl A {
+    pub fn aa() -> i32 {
+        1
     }
 }
 
+fn aa() -> i32 {
+    1
+}
+
+fn dd() {}
+
 fn main() {
-    let c = C::A(A {});
-    let t = tt(c);
+    let c = fa(2, B {});
+    println!("{}", c);
+    let d = aa();
+    println!("{}", d);
 }
