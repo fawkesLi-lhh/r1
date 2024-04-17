@@ -1,3 +1,4 @@
+def_id "DefId(0:7 ~ r1[41e4]::st::sta::{impl#0}::aa)"
 Body Body {
     params: [],
     value: Expr {
@@ -32,14 +33,15 @@ Body Body {
         span: src/st/sta.rs:3:24: 5:6 (#0),
     },
 }
-DefId DefId(0:7 ~ r1[41e4]::st::sta::{impl#0}::aa)
 Fnitem FnItem {
     name: "aa",
     span: "src/st/sta.rs:3:5: 5:6 (#0)",
+    def_id: "DefId(0:7 ~ r1[41e4]::st::sta::{impl#0}::aa)",
     params: [],
     calls: [],
 }
 
+def_id "DefId(0:8 ~ r1[41e4]::st::sta::cc)"
 Body Body {
     params: [],
     value: Expr {
@@ -58,14 +60,15 @@ Body Body {
         span: src/st/sta.rs:8:13: 8:15 (#0),
     },
 }
-DefId DefId(0:8 ~ r1[41e4]::st::sta::cc)
 Fnitem FnItem {
     name: "cc",
     span: "src/st/sta.rs:8:1: 8:15 (#0)",
+    def_id: "DefId(0:8 ~ r1[41e4]::st::sta::cc)",
     params: [],
     calls: [],
 }
 
+def_id "DefId(0:9 ~ r1[41e4]::fa)"
 Body Body {
     params: [
         Param {
@@ -494,25 +497,63 @@ Body Body {
         span: src/main.rs:3:33: 9:2 (#0),
     },
 }
-DefId DefId(0:9 ~ r1[41e4]::fa)
 Fnitem FnItem {
     name: "fa",
     span: "src/main.rs:3:1: 9:2 (#0)",
+    def_id: "DefId(0:9 ~ r1[41e4]::fa)",
     params: [
         FnParam {
             name: "asdasd",
+            ty: "get_def_id_by_res PrimTy(Int(I32))",
         },
         FnParam {
             name: "b",
+            ty: "DefId(0:10 ~ r1[41e4]::B)",
         },
     ],
     calls: [
         Call {
+            def_id: "DefId(0:7 ~ r1[41e4]::st::sta::{impl#0}::aa)",
             inner: ItemFn(
-                ItemFn {
+                ItemFnCall {
                     name: "aa",
-                    span: "src/main.rs:4:27: 4:29 (#0)",
+                    def_id: "DefId(0:7 ~ r1[41e4]::st::sta::{impl#0}::aa)",
                     rel_struct: "DefId(0:5 ~ r1[41e4]::st::sta::A)",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+        Call {
+            def_id: "DefId(0:12 ~ r1[41e4]::{impl#0}::bb)",
+            inner: Method(
+                MethodCall {
+                    name: "bb",
+                    def_id: "DefId(0:12 ~ r1[41e4]::{impl#0}::bb)",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+        Call {
+            def_id: "DefId(0:8 ~ r1[41e4]::st::sta::cc)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "",
+                    def_id: "DefId(0:8 ~ r1[41e4]::st::sta::cc)",
+                    rel_struct: "",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+        Call {
+            def_id: "DefId(0:18 ~ r1[41e4]::dd)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "",
+                    def_id: "DefId(0:18 ~ r1[41e4]::dd)",
+                    rel_struct: "",
                 },
             ),
             useful: false,
@@ -521,6 +562,7 @@ Fnitem FnItem {
     ],
 }
 
+def_id "DefId(0:12 ~ r1[41e4]::{impl#0}::bb)"
 Body Body {
     params: [
         Param {
@@ -544,7 +586,7 @@ Body Body {
         },
     ],
     value: Expr {
-        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).19),
+        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).32),
         kind: Block(
             Block {
                 stmts: [
@@ -553,13 +595,13 @@ Body Body {
                         kind: Local(
                             Local {
                                 pat: Pat {
-                                    hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).14),
+                                    hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).27),
                                     kind: Binding(
                                         BindingAnnotation(
                                             No,
                                             Not,
                                         ),
-                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).14),
+                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).27),
                                         r#0,
                                         None,
                                     ),
@@ -596,38 +638,38 @@ Body Body {
                                                 kind: Closure,
                                             },
                                         ),
-                                        span: src/main.rs:14:17: 17:10 (#0),
+                                        span: src/main.rs:14:17: 18:10 (#0),
                                     },
                                 ),
                                 els: None,
-                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).13),
-                                span: src/main.rs:14:9: 17:11 (#0),
+                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).26),
+                                span: src/main.rs:14:9: 18:11 (#0),
                                 source: Normal,
                             },
                         ),
-                        span: src/main.rs:14:9: 17:11 (#0),
+                        span: src/main.rs:14:9: 18:11 (#0),
                     },
                 ],
                 expr: Some(
                     Expr {
-                        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).15),
+                        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).28),
                         kind: Call(
                             Expr {
-                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).16),
+                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).29),
                                 kind: Path(
                                     Resolved(
                                         None,
                                         Path {
-                                            span: src/main.rs:18:9: 18:10 (#0),
+                                            span: src/main.rs:19:9: 19:10 (#0),
                                             res: Local(
-                                                HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).14),
+                                                HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).27),
                                             ),
                                             segments: [
                                                 PathSegment {
                                                     ident: r#0,
-                                                    hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).17),
+                                                    hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).30),
                                                     res: Local(
-                                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).14),
+                                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).27),
                                                     ),
                                                     args: None,
                                                     infer_args: true,
@@ -636,36 +678,50 @@ Body Body {
                                         },
                                     ),
                                 ),
-                                span: src/main.rs:18:9: 18:10 (#0),
+                                span: src/main.rs:19:9: 19:10 (#0),
                             },
                             [],
                         ),
-                        span: src/main.rs:18:9: 18:12 (#0),
+                        span: src/main.rs:19:9: 19:12 (#0),
                     },
                 ),
-                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).18),
+                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).31),
                 rules: DefaultBlock,
-                span: src/main.rs:13:25: 19:6 (#0),
+                span: src/main.rs:13:25: 20:6 (#0),
                 targeted_by_break: false,
             },
             None,
         ),
-        span: src/main.rs:13:25: 19:6 (#0),
+        span: src/main.rs:13:25: 20:6 (#0),
     },
 }
-DefId DefId(0:12 ~ r1[41e4]::{impl#0}::bb)
 Fnitem FnItem {
     name: "bb",
-    span: "src/main.rs:13:5: 19:6 (#0)",
+    span: "src/main.rs:13:5: 20:6 (#0)",
+    def_id: "DefId(0:12 ~ r1[41e4]::{impl#0}::bb)",
     params: [
         FnParam {
             name: "&self",
+            ty: "get_rel_struct_in_ty 1  Ty { hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).37), kind: Ref(Lifetime { hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).34), ident: '_#0, res: Param(DefId(0:20 ~ r1[41e4]::{impl#0}::bb::'_)) }, MutTy { ty: Ty { hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).36), kind: Path(Resolved(None, Path { span: src/main.rs:13:12: 13:16 (#0), res: SelfTyAlias { alias_to: DefId(0:11 ~ r1[41e4]::{impl#0}), forbid_generic: false, is_trait_impl: false }, segments: [PathSegment { ident: Self#0, hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).35), res: SelfTyAlias { alias_to: DefId(0:11 ~ r1[41e4]::{impl#0}), forbid_generic: false, is_trait_impl: false }, args: None, infer_args: true }] })), span: src/main.rs:13:12: 13:16 (#0) }, mutbl: Not }), span: src/main.rs:13:11: 13:16 (#0) }",
         },
     ],
     calls: [
         Call {
+            def_id: "DefId(0:13 ~ r1[41e4]::{impl#0}::bb::{closure#0})",
             inner: Closure(
-                "src/main.rs:18:9: 18:10 (#0)",
+                "src/main.rs:14:17: 14:19 (#0)",
+            ),
+            useful: false,
+            scan_status: false,
+        },
+        Call {
+            def_id: "DefId(0:12 ~ r1[41e4]::{impl#0}::bb)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "",
+                    def_id: "DefId(0:12 ~ r1[41e4]::{impl#0}::bb)",
+                    rel_struct: "",
+                },
             ),
             useful: false,
             scan_status: true,
@@ -673,6 +729,7 @@ Fnitem FnItem {
     ],
 }
 
+def_id "DefId(0:13 ~ r1[41e4]::{impl#0}::bb::{closure#0})"
 Body Body {
     params: [],
     value: Expr {
@@ -724,53 +781,202 @@ Body Body {
                         ),
                         span: src/main.rs:15:13: 15:23 (#0),
                     },
+                    Stmt {
+                        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).10),
+                        kind: Local(
+                            Local {
+                                pat: Pat {
+                                    hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).19),
+                                    kind: Binding(
+                                        BindingAnnotation(
+                                            No,
+                                            Not,
+                                        ),
+                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).19),
+                                        one#0,
+                                        None,
+                                    ),
+                                    span: src/main.rs:16:17: 16:20 (#0),
+                                    default_binding_modes: true,
+                                },
+                                ty: None,
+                                init: Some(
+                                    Expr {
+                                        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).11),
+                                        kind: Call(
+                                            Expr {
+                                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).12),
+                                                kind: Path(
+                                                    TypeRelative(
+                                                        Ty {
+                                                            hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).16),
+                                                            kind: Path(
+                                                                Resolved(
+                                                                    None,
+                                                                    Path {
+                                                                        span: src/main.rs:16:23: 16:33 (#0),
+                                                                        res: Def(
+                                                                            Struct,
+                                                                            DefId(0:5 ~ r1[41e4]::st::sta::A),
+                                                                        ),
+                                                                        segments: [
+                                                                            PathSegment {
+                                                                                ident: st#0,
+                                                                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).13),
+                                                                                res: Def(
+                                                                                    Mod,
+                                                                                    DefId(0:3 ~ r1[41e4]::st),
+                                                                                ),
+                                                                                args: None,
+                                                                                infer_args: true,
+                                                                            },
+                                                                            PathSegment {
+                                                                                ident: sta#0,
+                                                                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).14),
+                                                                                res: Def(
+                                                                                    Mod,
+                                                                                    DefId(0:4 ~ r1[41e4]::st::sta),
+                                                                                ),
+                                                                                args: None,
+                                                                                infer_args: true,
+                                                                            },
+                                                                            PathSegment {
+                                                                                ident: A#0,
+                                                                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).15),
+                                                                                res: Def(
+                                                                                    Struct,
+                                                                                    DefId(0:5 ~ r1[41e4]::st::sta::A),
+                                                                                ),
+                                                                                args: None,
+                                                                                infer_args: true,
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ),
+                                                            ),
+                                                            span: src/main.rs:16:23: 16:33 (#0),
+                                                        },
+                                                        PathSegment {
+                                                            ident: aa#0,
+                                                            hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).17),
+                                                            res: Err,
+                                                            args: None,
+                                                            infer_args: true,
+                                                        },
+                                                    ),
+                                                ),
+                                                span: src/main.rs:16:23: 16:37 (#0),
+                                            },
+                                            [],
+                                        ),
+                                        span: src/main.rs:16:23: 16:39 (#0),
+                                    },
+                                ),
+                                els: None,
+                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).18),
+                                span: src/main.rs:16:13: 16:40 (#0),
+                                source: Normal,
+                            },
+                        ),
+                        span: src/main.rs:16:13: 16:40 (#0),
+                    },
                 ],
                 expr: Some(
                     Expr {
-                        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).10),
-                        kind: Path(
-                            Resolved(
-                                None,
-                                Path {
-                                    span: src/main.rs:16:13: 16:14 (#0),
-                                    res: Local(
-                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).9),
-                                    ),
-                                    segments: [
-                                        PathSegment {
-                                            ident: a#0,
-                                            hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).11),
+                        hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).20),
+                        kind: Binary(
+                            Spanned {
+                                node: Add,
+                                span: src/main.rs:17:15: 17:16 (#0),
+                            },
+                            Expr {
+                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).21),
+                                kind: Path(
+                                    Resolved(
+                                        None,
+                                        Path {
+                                            span: src/main.rs:17:13: 17:14 (#0),
                                             res: Local(
                                                 HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).9),
                                             ),
-                                            args: None,
-                                            infer_args: true,
+                                            segments: [
+                                                PathSegment {
+                                                    ident: a#0,
+                                                    hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).22),
+                                                    res: Local(
+                                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).9),
+                                                    ),
+                                                    args: None,
+                                                    infer_args: true,
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
-                            ),
+                                    ),
+                                ),
+                                span: src/main.rs:17:13: 17:14 (#0),
+                            },
+                            Expr {
+                                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).23),
+                                kind: Path(
+                                    Resolved(
+                                        None,
+                                        Path {
+                                            span: src/main.rs:17:17: 17:20 (#0),
+                                            res: Local(
+                                                HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).19),
+                                            ),
+                                            segments: [
+                                                PathSegment {
+                                                    ident: one#0,
+                                                    hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).24),
+                                                    res: Local(
+                                                        HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).19),
+                                                    ),
+                                                    args: None,
+                                                    infer_args: true,
+                                                },
+                                            ],
+                                        },
+                                    ),
+                                ),
+                                span: src/main.rs:17:17: 17:20 (#0),
+                            },
                         ),
-                        span: src/main.rs:16:13: 16:14 (#0),
+                        span: src/main.rs:17:13: 17:20 (#0),
                     },
                 ),
-                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).12),
+                hir_id: HirId(DefId(0:12 ~ r1[41e4]::{impl#0}::bb).25),
                 rules: DefaultBlock,
-                span: src/main.rs:14:20: 17:10 (#0),
+                span: src/main.rs:14:20: 18:10 (#0),
                 targeted_by_break: false,
             },
             None,
         ),
-        span: src/main.rs:14:20: 17:10 (#0),
+        span: src/main.rs:14:20: 18:10 (#0),
     },
 }
-DefId DefId(0:13 ~ r1[41e4]::{impl#0}::bb::{closure#0})
 Fnitem FnItem {
     name: "Closure",
-    span: "src/main.rs:14:17: 17:10 (#0)",
+    span: "src/main.rs:14:17: 18:10 (#0)",
+    def_id: "DefId(0:13 ~ r1[41e4]::{impl#0}::bb::{closure#0})",
     params: [],
-    calls: [],
+    calls: [
+        Call {
+            def_id: "DefId(0:7 ~ r1[41e4]::st::sta::{impl#0}::aa)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "aa",
+                    def_id: "DefId(0:7 ~ r1[41e4]::st::sta::{impl#0}::aa)",
+                    rel_struct: "DefId(0:5 ~ r1[41e4]::st::sta::A)",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+    ],
 }
 
+def_id "DefId(0:16 ~ r1[41e4]::{impl#1}::aa)"
 Body Body {
     params: [],
     value: Expr {
@@ -789,30 +995,31 @@ Body Body {
                                     ),
                                     Unsuffixed,
                                 ),
-                                span: src/main.rs:24:9: 24:10 (#0),
+                                span: src/main.rs:25:9: 25:10 (#0),
                             },
                         ),
-                        span: src/main.rs:24:9: 24:10 (#0),
+                        span: src/main.rs:25:9: 25:10 (#0),
                     },
                 ),
                 hir_id: HirId(DefId(0:16 ~ r1[41e4]::{impl#1}::aa).2),
                 rules: DefaultBlock,
-                span: src/main.rs:23:24: 25:6 (#0),
+                span: src/main.rs:24:24: 26:6 (#0),
                 targeted_by_break: false,
             },
             None,
         ),
-        span: src/main.rs:23:24: 25:6 (#0),
+        span: src/main.rs:24:24: 26:6 (#0),
     },
 }
-DefId DefId(0:16 ~ r1[41e4]::{impl#1}::aa)
 Fnitem FnItem {
     name: "aa",
-    span: "src/main.rs:23:5: 25:6 (#0)",
+    span: "src/main.rs:24:5: 26:6 (#0)",
+    def_id: "DefId(0:16 ~ r1[41e4]::{impl#1}::aa)",
     params: [],
     calls: [],
 }
 
+def_id "DefId(0:17 ~ r1[41e4]::aa)"
 Body Body {
     params: [],
     value: Expr {
@@ -831,30 +1038,31 @@ Body Body {
                                     ),
                                     Unsuffixed,
                                 ),
-                                span: src/main.rs:29:5: 29:6 (#0),
+                                span: src/main.rs:30:5: 30:6 (#0),
                             },
                         ),
-                        span: src/main.rs:29:5: 29:6 (#0),
+                        span: src/main.rs:30:5: 30:6 (#0),
                     },
                 ),
                 hir_id: HirId(DefId(0:17 ~ r1[41e4]::aa).2),
                 rules: DefaultBlock,
-                span: src/main.rs:28:16: 30:2 (#0),
+                span: src/main.rs:29:16: 31:2 (#0),
                 targeted_by_break: false,
             },
             None,
         ),
-        span: src/main.rs:28:16: 30:2 (#0),
+        span: src/main.rs:29:16: 31:2 (#0),
     },
 }
-DefId DefId(0:17 ~ r1[41e4]::aa)
 Fnitem FnItem {
     name: "aa",
-    span: "src/main.rs:28:1: 30:2 (#0)",
+    span: "src/main.rs:29:1: 31:2 (#0)",
+    def_id: "DefId(0:17 ~ r1[41e4]::aa)",
     params: [],
     calls: [],
 }
 
+def_id "DefId(0:18 ~ r1[41e4]::dd)"
 Body Body {
     params: [],
     value: Expr {
@@ -865,22 +1073,23 @@ Body Body {
                 expr: None,
                 hir_id: HirId(DefId(0:18 ~ r1[41e4]::dd).1),
                 rules: DefaultBlock,
-                span: src/main.rs:32:9: 32:11 (#0),
+                span: src/main.rs:33:9: 33:11 (#0),
                 targeted_by_break: false,
             },
             None,
         ),
-        span: src/main.rs:32:9: 32:11 (#0),
+        span: src/main.rs:33:9: 33:11 (#0),
     },
 }
-DefId DefId(0:18 ~ r1[41e4]::dd)
 Fnitem FnItem {
     name: "dd",
-    span: "src/main.rs:32:1: 32:11 (#0)",
+    span: "src/main.rs:33:1: 33:11 (#0)",
+    def_id: "DefId(0:18 ~ r1[41e4]::dd)",
     params: [],
     calls: [],
 }
 
+def_id "DefId(0:19 ~ r1[41e4]::main)"
 Body Body {
     params: [],
     value: Expr {
@@ -903,7 +1112,7 @@ Body Body {
                                         c#0,
                                         None,
                                     ),
-                                    span: src/main.rs:35:9: 35:10 (#0),
+                                    span: src/main.rs:36:9: 36:10 (#0),
                                     default_binding_modes: true,
                                 },
                                 ty: None,
@@ -917,7 +1126,7 @@ Body Body {
                                                     Resolved(
                                                         None,
                                                         Path {
-                                                            span: src/main.rs:35:13: 35:15 (#0),
+                                                            span: src/main.rs:36:13: 36:15 (#0),
                                                             res: Def(
                                                                 Fn,
                                                                 DefId(0:9 ~ r1[41e4]::fa),
@@ -937,7 +1146,7 @@ Body Body {
                                                         },
                                                     ),
                                                 ),
-                                                span: src/main.rs:35:13: 35:15 (#0),
+                                                span: src/main.rs:36:13: 36:15 (#0),
                                             },
                                             [
                                                 Expr {
@@ -950,10 +1159,10 @@ Body Body {
                                                                 ),
                                                                 Unsuffixed,
                                                             ),
-                                                            span: src/main.rs:35:16: 35:17 (#0),
+                                                            span: src/main.rs:36:16: 36:17 (#0),
                                                         },
                                                     ),
-                                                    span: src/main.rs:35:16: 35:17 (#0),
+                                                    span: src/main.rs:36:16: 36:17 (#0),
                                                 },
                                                 Expr {
                                                     hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).6),
@@ -961,7 +1170,7 @@ Body Body {
                                                         Resolved(
                                                             None,
                                                             Path {
-                                                                span: src/main.rs:35:19: 35:20 (#0),
+                                                                span: src/main.rs:36:19: 36:20 (#0),
                                                                 res: Def(
                                                                     Struct,
                                                                     DefId(0:10 ~ r1[41e4]::B),
@@ -983,20 +1192,20 @@ Body Body {
                                                         [],
                                                         None,
                                                     ),
-                                                    span: src/main.rs:35:19: 35:23 (#0),
+                                                    span: src/main.rs:36:19: 36:23 (#0),
                                                 },
                                             ],
                                         ),
-                                        span: src/main.rs:35:13: 35:24 (#0),
+                                        span: src/main.rs:36:13: 36:24 (#0),
                                     },
                                 ),
                                 els: None,
                                 hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).8),
-                                span: src/main.rs:35:5: 35:25 (#0),
+                                span: src/main.rs:36:5: 36:25 (#0),
                                 source: Normal,
                             },
                         ),
-                        span: src/main.rs:35:5: 35:25 (#0),
+                        span: src/main.rs:36:5: 36:25 (#0),
                     },
                     Stmt {
                         hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).37),
@@ -1122,10 +1331,10 @@ Body Body {
                                                                                                                 "",
                                                                                                                 Cooked,
                                                                                                             ),
-                                                                                                            span: src/main.rs:36:14: 36:18 (#0),
+                                                                                                            span: src/main.rs:37:14: 37:18 (#0),
                                                                                                         },
                                                                                                     ),
-                                                                                                    span: src/main.rs:36:14: 36:18 (#0),
+                                                                                                    span: src/main.rs:37:14: 37:18 (#0),
                                                                                                 },
                                                                                                 Expr {
                                                                                                     hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).18),
@@ -1135,17 +1344,17 @@ Body Body {
                                                                                                                 "\n",
                                                                                                                 Cooked,
                                                                                                             ),
-                                                                                                            span: src/main.rs:36:14: 36:18 (#0),
+                                                                                                            span: src/main.rs:37:14: 37:18 (#0),
                                                                                                         },
                                                                                                     ),
-                                                                                                    span: src/main.rs:36:14: 36:18 (#0),
+                                                                                                    span: src/main.rs:37:14: 37:18 (#0),
                                                                                                 },
                                                                                             ],
                                                                                         ),
-                                                                                        span: src/main.rs:36:14: 36:18 (#0),
+                                                                                        span: src/main.rs:37:14: 37:18 (#0),
                                                                                     },
                                                                                 ),
-                                                                                span: src/main.rs:36:14: 36:18 (#0),
+                                                                                span: src/main.rs:37:14: 37:18 (#0),
                                                                             },
                                                                             Expr {
                                                                                 hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).30),
@@ -1169,7 +1378,7 @@ Body Body {
                                                                                                                             Resolved(
                                                                                                                                 None,
                                                                                                                                 Path {
-                                                                                                                                    span: src/main.rs:36:15: 36:17 (#5),
+                                                                                                                                    span: src/main.rs:37:15: 37:17 (#5),
                                                                                                                                     res: Def(
                                                                                                                                         Struct,
                                                                                                                                         DefId(2:37098 ~ core[dbb5]::fmt::rt::Argument),
@@ -1189,7 +1398,7 @@ Body Body {
                                                                                                                                 },
                                                                                                                             ),
                                                                                                                         ),
-                                                                                                                        span: src/main.rs:36:15: 36:17 (#5),
+                                                                                                                        span: src/main.rs:37:15: 37:17 (#5),
                                                                                                                     },
                                                                                                                     PathSegment {
                                                                                                                         ident: new_display#5,
@@ -1200,7 +1409,7 @@ Body Body {
                                                                                                                     },
                                                                                                                 ),
                                                                                                             ),
-                                                                                                            span: src/main.rs:36:15: 36:17 (#5),
+                                                                                                            span: src/main.rs:37:15: 37:17 (#5),
                                                                                                         },
                                                                                                         [
                                                                                                             Expr {
@@ -1214,7 +1423,7 @@ Body Body {
                                                                                                                             Resolved(
                                                                                                                                 None,
                                                                                                                                 Path {
-                                                                                                                                    span: src/main.rs:36:20: 36:21 (#0),
+                                                                                                                                    span: src/main.rs:37:20: 37:21 (#0),
                                                                                                                                     res: Local(
                                                                                                                                         HirId(DefId(0:19 ~ r1[41e4]::main).9),
                                                                                                                                     ),
@@ -1232,14 +1441,14 @@ Body Body {
                                                                                                                                 },
                                                                                                                             ),
                                                                                                                         ),
-                                                                                                                        span: src/main.rs:36:20: 36:21 (#0),
+                                                                                                                        span: src/main.rs:37:20: 37:21 (#0),
                                                                                                                     },
                                                                                                                 ),
-                                                                                                                span: src/main.rs:36:20: 36:21 (#5),
+                                                                                                                span: src/main.rs:37:20: 37:21 (#5),
                                                                                                             },
                                                                                                         ],
                                                                                                     ),
-                                                                                                    span: src/main.rs:36:15: 36:17 (#5),
+                                                                                                    span: src/main.rs:37:15: 37:17 (#5),
                                                                                                 },
                                                                                             ],
                                                                                         ),
@@ -1288,7 +1497,7 @@ Body Body {
                                         d#0,
                                         None,
                                     ),
-                                    span: src/main.rs:37:9: 37:10 (#0),
+                                    span: src/main.rs:38:9: 38:10 (#0),
                                     default_binding_modes: true,
                                 },
                                 ty: None,
@@ -1302,7 +1511,7 @@ Body Body {
                                                     Resolved(
                                                         None,
                                                         Path {
-                                                            span: src/main.rs:37:13: 37:15 (#0),
+                                                            span: src/main.rs:38:13: 38:15 (#0),
                                                             res: Def(
                                                                 Fn,
                                                                 DefId(0:17 ~ r1[41e4]::aa),
@@ -1322,20 +1531,20 @@ Body Body {
                                                         },
                                                     ),
                                                 ),
-                                                span: src/main.rs:37:13: 37:15 (#0),
+                                                span: src/main.rs:38:13: 38:15 (#0),
                                             },
                                             [],
                                         ),
-                                        span: src/main.rs:37:13: 37:17 (#0),
+                                        span: src/main.rs:38:13: 38:17 (#0),
                                     },
                                 ),
                                 els: None,
                                 hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).42),
-                                span: src/main.rs:37:5: 37:18 (#0),
+                                span: src/main.rs:38:5: 38:18 (#0),
                                 source: Normal,
                             },
                         ),
-                        span: src/main.rs:37:5: 37:18 (#0),
+                        span: src/main.rs:38:5: 38:18 (#0),
                     },
                     Stmt {
                         hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).71),
@@ -1461,10 +1670,10 @@ Body Body {
                                                                                                                 "",
                                                                                                                 Cooked,
                                                                                                             ),
-                                                                                                            span: src/main.rs:38:14: 38:18 (#0),
+                                                                                                            span: src/main.rs:39:14: 39:18 (#0),
                                                                                                         },
                                                                                                     ),
-                                                                                                    span: src/main.rs:38:14: 38:18 (#0),
+                                                                                                    span: src/main.rs:39:14: 39:18 (#0),
                                                                                                 },
                                                                                                 Expr {
                                                                                                     hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).52),
@@ -1474,17 +1683,17 @@ Body Body {
                                                                                                                 "\n",
                                                                                                                 Cooked,
                                                                                                             ),
-                                                                                                            span: src/main.rs:38:14: 38:18 (#0),
+                                                                                                            span: src/main.rs:39:14: 39:18 (#0),
                                                                                                         },
                                                                                                     ),
-                                                                                                    span: src/main.rs:38:14: 38:18 (#0),
+                                                                                                    span: src/main.rs:39:14: 39:18 (#0),
                                                                                                 },
                                                                                             ],
                                                                                         ),
-                                                                                        span: src/main.rs:38:14: 38:18 (#0),
+                                                                                        span: src/main.rs:39:14: 39:18 (#0),
                                                                                     },
                                                                                 ),
-                                                                                span: src/main.rs:38:14: 38:18 (#0),
+                                                                                span: src/main.rs:39:14: 39:18 (#0),
                                                                             },
                                                                             Expr {
                                                                                 hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).64),
@@ -1508,7 +1717,7 @@ Body Body {
                                                                                                                             Resolved(
                                                                                                                                 None,
                                                                                                                                 Path {
-                                                                                                                                    span: src/main.rs:38:15: 38:17 (#7),
+                                                                                                                                    span: src/main.rs:39:15: 39:17 (#7),
                                                                                                                                     res: Def(
                                                                                                                                         Struct,
                                                                                                                                         DefId(2:37098 ~ core[dbb5]::fmt::rt::Argument),
@@ -1528,7 +1737,7 @@ Body Body {
                                                                                                                                 },
                                                                                                                             ),
                                                                                                                         ),
-                                                                                                                        span: src/main.rs:38:15: 38:17 (#7),
+                                                                                                                        span: src/main.rs:39:15: 39:17 (#7),
                                                                                                                     },
                                                                                                                     PathSegment {
                                                                                                                         ident: new_display#7,
@@ -1539,7 +1748,7 @@ Body Body {
                                                                                                                     },
                                                                                                                 ),
                                                                                                             ),
-                                                                                                            span: src/main.rs:38:15: 38:17 (#7),
+                                                                                                            span: src/main.rs:39:15: 39:17 (#7),
                                                                                                         },
                                                                                                         [
                                                                                                             Expr {
@@ -1553,7 +1762,7 @@ Body Body {
                                                                                                                             Resolved(
                                                                                                                                 None,
                                                                                                                                 Path {
-                                                                                                                                    span: src/main.rs:38:20: 38:21 (#0),
+                                                                                                                                    span: src/main.rs:39:20: 39:21 (#0),
                                                                                                                                     res: Local(
                                                                                                                                         HirId(DefId(0:19 ~ r1[41e4]::main).43),
                                                                                                                                     ),
@@ -1571,14 +1780,14 @@ Body Body {
                                                                                                                                 },
                                                                                                                             ),
                                                                                                                         ),
-                                                                                                                        span: src/main.rs:38:20: 38:21 (#0),
+                                                                                                                        span: src/main.rs:39:20: 39:21 (#0),
                                                                                                                     },
                                                                                                                 ),
-                                                                                                                span: src/main.rs:38:20: 38:21 (#7),
+                                                                                                                span: src/main.rs:39:20: 39:21 (#7),
                                                                                                             },
                                                                                                         ],
                                                                                                     ),
-                                                                                                    span: src/main.rs:38:15: 38:17 (#7),
+                                                                                                    span: src/main.rs:39:15: 39:17 (#7),
                                                                                                 },
                                                                                             ],
                                                                                         ),
@@ -1616,30 +1825,88 @@ Body Body {
                 expr: None,
                 hir_id: HirId(DefId(0:19 ~ r1[41e4]::main).72),
                 rules: DefaultBlock,
-                span: src/main.rs:34:11: 39:2 (#0),
+                span: src/main.rs:35:11: 40:2 (#0),
                 targeted_by_break: false,
             },
             None,
         ),
-        span: src/main.rs:34:11: 39:2 (#0),
+        span: src/main.rs:35:11: 40:2 (#0),
     },
 }
-DefId DefId(0:19 ~ r1[41e4]::main)
 Fnitem FnItem {
     name: "main",
-    span: "src/main.rs:34:1: 39:2 (#0)",
+    span: "src/main.rs:35:1: 40:2 (#0)",
+    def_id: "DefId(0:19 ~ r1[41e4]::main)",
     params: [],
     calls: [
         Call {
-            inner: Closure(
-                "src/main.rs:35:13: 35:15 (#0)",
+            def_id: "DefId(0:9 ~ r1[41e4]::fa)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "",
+                    def_id: "DefId(0:9 ~ r1[41e4]::fa)",
+                    rel_struct: "",
+                },
             ),
             useful: false,
             scan_status: true,
         },
         Call {
-            inner: Closure(
-                "src/main.rs:37:13: 37:15 (#0)",
+            def_id: "DefId(2:10001 ~ core[dbb5]::fmt::{impl#2}::new_v1)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "new_v1",
+                    def_id: "DefId(2:10001 ~ core[dbb5]::fmt::{impl#2}::new_v1)",
+                    rel_struct: "DefId(2:37145 ~ core[dbb5]::fmt::Arguments)",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+        Call {
+            def_id: "DefId(1:3400 ~ std[cca2]::io::stdio::_print)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "",
+                    def_id: "DefId(1:3400 ~ std[cca2]::io::stdio::_print)",
+                    rel_struct: "",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+        Call {
+            def_id: "DefId(0:17 ~ r1[41e4]::aa)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "",
+                    def_id: "DefId(0:17 ~ r1[41e4]::aa)",
+                    rel_struct: "",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+        Call {
+            def_id: "DefId(2:10001 ~ core[dbb5]::fmt::{impl#2}::new_v1)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "new_v1",
+                    def_id: "DefId(2:10001 ~ core[dbb5]::fmt::{impl#2}::new_v1)",
+                    rel_struct: "DefId(2:37145 ~ core[dbb5]::fmt::Arguments)",
+                },
+            ),
+            useful: false,
+            scan_status: true,
+        },
+        Call {
+            def_id: "DefId(1:3400 ~ std[cca2]::io::stdio::_print)",
+            inner: ItemFn(
+                ItemFnCall {
+                    name: "",
+                    def_id: "DefId(1:3400 ~ std[cca2]::io::stdio::_print)",
+                    rel_struct: "",
+                },
             ),
             useful: false,
             scan_status: true,
