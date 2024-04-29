@@ -1,4 +1,4 @@
-CREATE TABLE `orderinfo` (
+CREATE TABLE `orderinfo_t0` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `tradeDate` decimal(9,0) NOT NULL,
   `strategyOrderId` bigint NOT NULL,
@@ -24,11 +24,11 @@ CREATE TABLE `orderinfo` (
   `bsFlag` tinyint NOT NULL,
   `localId` char(100) DEFAULT NULL,
   `sysno` char(32) NOT NULL,
-  `tradePrice` decimal(10,5) NOT NULL COMMENT 'tradePrice ',
+  `tradePrice` decimal(10,3) NOT NULL,
   `tradeVol` decimal(10,0) NOT NULL,
   `cancelVol` decimal(10,0) NOT NULL DEFAULT '0',
   `cancelNum` int DEFAULT NULL,
-  `remark` varchar(256) NOT NULL DEFAULT '',
+  `remark` varchar(2048) NOT NULL DEFAULT '',
   `createTm` datetime(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
   `updateTm` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `channelId` varchar(32) NOT NULL DEFAULT '',
@@ -41,6 +41,5 @@ CREATE TABLE `orderinfo` (
   `start_push` tinyint(1) DEFAULT '0',
   `department` varchar(100) DEFAULT '',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `localId` (`localId`),
-  KEY `date_account` (`tradeDate`,`accountId`)
-) ENGINE=InnoDB AUTO_INCREMENT=28478 DEFAULT CHARSET=utf8mb3;
+  UNIQUE KEY `tradeDate_localId` (`tradeDate`,`localId`)
+) ENGINE=InnoDB AUTO_INCREMENT=148600 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
