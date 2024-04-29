@@ -1,0 +1,63 @@
+{
+    "code": 0,
+    "data": {
+        "pos": [
+            {
+                "trade_acc": "test111",
+                "stock_code": "600016",
+                "total_vol": 46300,
+                "avail_vol": 45300,
+                "lock_vol": 0,
+                "exchange_id": 0,
+                "trade_acc_name": "测试111",
+                "rank": 4.0,
+                "symbol_name": "民生银行"
+            },
+            {
+                "trade_acc": "test111",
+                "stock_code": "000016",
+                "total_vol": 20500,
+                "avail_vol": 20000,
+                "lock_vol": 0,
+                "exchange_id": 1,
+                "trade_acc_name": "测试111",
+                "rank": 1.0,
+                "symbol_name": "深康佳A"
+            },
+            {
+                "trade_acc": "test111",
+                "stock_code": "000001",
+                "total_vol": 354300,
+                "avail_vol": 352800,
+                "lock_vol": 0,
+                "exchange_id": 1,
+                "trade_acc_name": "测试111",
+                "rank": 4.0,
+                "symbol_name": "平安银行"
+            },
+            {
+                "trade_acc": "test111",
+                "stock_code": "000691",
+                "total_vol": 1300,
+                "avail_vol": 800,
+                "lock_vol": 0,
+                "exchange_id": 1,
+                "trade_acc_name": "测试111",
+                "rank": 3.0,
+                "symbol_name": "亚太实业"
+            }
+        ],
+        "fund": {
+            "balance": 100014095.89,
+            "available": 95727430.34,
+            "frozen": 0.0,
+            "frozen_fee": 0.0,
+            "profit": 0.0,
+            "used_fee": 0.0,
+            "debit": 0.0,
+            "asset": 0.0,
+            "mark1": 0,
+            "mark2": ""
+        }
+    }
+}
