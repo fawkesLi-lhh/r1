@@ -10,4 +10,6 @@ sled = "0.34"
 serde_json = "1.0"
 num-bigint = "0.4"
 hex = "0.4"
+anyhow = "1.0"
 ft_homomorphic = {git = "ssh://git@code.non-convex.com/lihaohan/ft_homomorphic.git"}
+ft_lab_auth = {git = "ssh://git@code.non-convex.com/lihaohan/ft_lab_auth.git"}
