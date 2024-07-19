@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fund="http://www.htsec.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <fund:requestResponse>
+            <messageResponseHead>
+                <dpSerialNumber>000M5H41H400061721269651376833fce3c</dpSerialNumber>
+                <totalDruation>515</totalDruation>
+                <backendDuration>456</backendDuration>
+                <respSN/>
+                <busSysCode>H4</busSysCode>
+                <resultCode>0</resultCode>
+                <resultMsg>&#25805;&#20316;&#25104;&#21151;</resultMsg>
+            </messageResponseHead>
+            <messageResponseBody>
+                <return>
+                    <idt_org__status>1</idt_org__status>
+                    <idt_org__id>1910883477440514130</idt_org__id>
+                    <idt_org__parent_id>1860044164306075708</idt_org__parent_id>
+                    <idt_org__name>&#28023;&#23500;&#20135;&#19994;&#25237;&#36164;&#22522;&#37329;&#31649;&#29702;&#26377;&#38480;&#20844;&#21496;</idt_org__name>
+                    <request_log__action_desc>&#31649;&#29702;&#21592;&#25805;&#20316;-&#37325;&#26032;&#25191;&#34892;&#32452;&#32455;&#20379;&#24212;&#31574;&#30053;</request_log__action_desc>
+                    <idt_org__sup_org_code>0000</idt_org__sup_org_code>
+                    <idt_org__org_code>1009</idt_org__org_code>
+                    <request_log__action_flag>0</request_log__action_flag>
+                </return>
+            </messageResponseBody>
+        </fund:requestResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,11 @@
+<object>
+	<fieldA>Some Text</fieldA>
+	<children>
+		<my_child>
+			<child_field_a>Child A</child_field_a>
+		</my_child>
+		<my_child>
+			<child_field_a>Child B</child_field_a>
+		</my_child>
+	</children>
+</object>

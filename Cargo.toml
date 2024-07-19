@@ -6,9 +6,14 @@ edition = "2021"
 
 [dependencies]
 ft_homomorphic = {git = "ssh://git@code.non-convex.com/lihaohan/ft_homomorphic.git"}
-yasuo_utils = {git = "ssh://git@code.non-convex.com/lihaohan/yasuo_utils.git"}
+#yasuo_utils = {git = "ssh://git@code.non-convex.com/lihaohan/yasuo_utils.git"}
 num-bigint = "0.4"
 hex = "0.4"
 jsonwebtoken = "8.3"
 anyhow = "1.0"
 openssl = { version = "0.10", features = ["vendored"] }
+xavier = "0.1.3"
+quick-xml = "0.31.0"
+serde = "1.0"
+serde_json = "1.0"
+htmlentity = "1.3.2"

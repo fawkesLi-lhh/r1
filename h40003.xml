@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fund="http://www.htsec.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <fund:requestResponse>
+            <messageResponseHead>
+                <dpSerialNumber>000M5H41H4000317211955215848a57a62f</dpSerialNumber>
+                <totalDruation>123</totalDruation>
+                <backendDuration>121</backendDuration>
+                <respSN/>
+                <busSysCode>H4</busSysCode>
+                <resultCode>0</resultCode>
+                <resultMsg>&#25805;&#20316;&#25104;&#21151;</resultMsg>
+            </messageResponseHead>
+            <messageResponseBody>
+                <returnCode>0</returnCode>
+                <returnMsg>success</returnMsg>
+                <return>
+                    <responseData>{"attributes":{"user_detail_info":{"jobs":[],"userTypes":[],"orgs":[]},"USER_UID":"014062","USER_NAME":"&#26705;&#25463;","account_no":"014062","token_gtime":1721195380911,"token_expired":"36000"},"id":"014062"}</responseData>
+                </return>
+            </messageResponseBody>
+        </fund:requestResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
